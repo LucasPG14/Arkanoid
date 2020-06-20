@@ -3,11 +3,21 @@
 Application::Application() 
 {
 	modules[0] = window = new ModuleWindow(true);
-	//modules[1] = input = new ModuleInput(true);
-	//modules[2] = textures = new ModuleTextures(true);
-	//modules[3] = audio = new ModuleAudio(true);
+	modules[1] = input = new ModuleInput(true);
+	modules[2] = textures = new ModuleTextures(true);
+	modules[3] = audio = new ModuleAudio(true);
 
-	//modules[4] = render = new ModuleRender(true);
+
+	modules[4] = intro = new SceneIntro(true);
+	modules[5] = scene1 = new SceneLevel1(false);
+
+	modules[6] = player = new ModulePlayer(false);
+	modules[7] = tileset = new ModuleTileset(false);
+
+	modules[8] = collisions = new ModuleCollisions(true);
+	modules[9] = fade = new ModuleFadeToBlack(true);
+	modules[10] = fonts = new ModuleFonts(true);
+	modules[11] = render = new ModuleRender(true);
 }
 
 Application::~Application()

@@ -25,6 +25,12 @@
     <Filter Include="Archivos de recursos\Modules\Gameplay">
       <UniqueIdentifier>{cf114969-343b-4d87-8eac-f03286d577ec}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de recursos\Utils">
+      <UniqueIdentifier>{3b1eb773-5d4e-4819-96e6-6511e0b723b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de recursos\Entities">
+      <UniqueIdentifier>{da2edcc5-570d-4bc0-aab9-0d78170eee11}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Application.h">
@@ -57,6 +63,36 @@
     <ClInclude Include="Source\Scene1.h">
       <Filter>Archivos de recursos\Modules\Gameplay</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Animation.h">
+      <Filter>Archivos de recursos\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Tileset.h">
+      <Filter>Archivos de recursos\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleTileset.h">
+      <Filter>Archivos de recursos\Modules\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\p2Point.h">
+      <Filter>Archivos de recursos\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModulePlayer.h">
+      <Filter>Archivos de recursos\Modules\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleCollisions.h">
+      <Filter>Archivos de recursos\Modules\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Collider.h">
+      <Filter>Archivos de recursos\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleFonts.h">
+      <Filter>Archivos de recursos\Modules\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleFadeToBlack.h">
+      <Filter>Archivos de recursos\Modules\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\SceneIntro.h">
+      <Filter>Archivos de recursos\Modules\Gameplay</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Globals.cpp">
@@ -87,6 +123,27 @@
       <Filter>Archivos de recursos\Modules\Core</Filter>
     </ClCompile>
     <ClCompile Include="Source\Scene1.cpp">
+      <Filter>Archivos de recursos\Modules\Gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ModuleTileset.cpp">
+      <Filter>Archivos de recursos\Modules\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ModulePlayer.cpp">
+      <Filter>Archivos de recursos\Modules\Gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Collider.cpp">
+      <Filter>Archivos de recursos\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ModuleFonts.cpp">
+      <Filter>Archivos de recursos\Modules\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ModuleFadeToBlack.cpp">
+      <Filter>Archivos de recursos\Modules\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ModuleCollisions.cpp">
+      <Filter>Archivos de recursos\Modules\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\SceneIntro.cpp">
       <Filter>Archivos de recursos\Modules\Gameplay</Filter>
     </ClCompile>
   </ItemGroup>

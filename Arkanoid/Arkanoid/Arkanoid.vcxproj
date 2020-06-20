@@ -141,28 +141,45 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Animation.h" />
     <ClInclude Include="Source\Application.h" />
+    <ClInclude Include="Source\Collider.h" />
     <ClInclude Include="Source\Globals.h" />
     <ClInclude Include="Source\MemoryLeaks.h" />
     <ClInclude Include="Source\Module.h" />
     <ClInclude Include="Source\ModuleAudio.h" />
+    <ClInclude Include="Source\ModuleCollisions.h" />
+    <ClInclude Include="Source\ModuleFadeToBlack.h" />
+    <ClInclude Include="Source\ModuleFonts.h" />
     <ClInclude Include="Source\ModuleInput.h" />
+    <ClInclude Include="Source\ModulePlayer.h" />
     <ClInclude Include="Source\ModuleRender.h" />
     <ClInclude Include="Source\ModuleTextures.h" />
+    <ClInclude Include="Source\ModuleTileset.h" />
     <ClInclude Include="Source\ModuleWindow.h" />
+    <ClInclude Include="Source\p2Point.h" />
     <ClInclude Include="Source\Scene1.h" />
+    <ClInclude Include="Source\SceneIntro.h" />
+    <ClInclude Include="Source\Tileset.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Application.cpp" />
+    <ClCompile Include="Source\Collider.cpp" />
     <ClCompile Include="Source\Globals.cpp" />
     <ClCompile Include="Source\Main.cpp" />
     <ClCompile Include="Source\Module.cpp" />
     <ClCompile Include="Source\ModuleAudio.cpp" />
+    <ClCompile Include="Source\ModuleCollisions.cpp" />
+    <ClCompile Include="Source\ModuleFadeToBlack.cpp" />
+    <ClCompile Include="Source\ModuleFonts.cpp" />
     <ClCompile Include="Source\ModuleInput.cpp" />
+    <ClCompile Include="Source\ModulePlayer.cpp" />
     <ClCompile Include="Source\ModuleRender.cpp" />
     <ClCompile Include="Source\ModuleTextures.cpp" />
+    <ClCompile Include="Source\ModuleTileset.cpp" />
     <ClCompile Include="Source\ModuleWindow.cpp" />
     <ClCompile Include="Source\Scene1.cpp" />
+    <ClCompile Include="Source\SceneIntro.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

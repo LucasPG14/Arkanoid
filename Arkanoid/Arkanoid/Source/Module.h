@@ -22,6 +22,7 @@ public:
 
 	virtual bool CleanUp();
 
+	virtual void OnCollision(Collider* c1, Collider* c2);
 
 	void Enable();
 

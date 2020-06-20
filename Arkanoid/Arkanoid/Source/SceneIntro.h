@@ -5,14 +5,14 @@
 
 struct SDL_Texture;
 
-class SceneLevel1 : public Module
+class SceneIntro : public Module
 {
 public:
 	//Constructor
-	SceneLevel1(bool startEnabled);
+	SceneIntro(bool startEnabled);
 
 	//Destructor
-	~SceneLevel1();
+	~SceneIntro();
 
 	// Called when the module is activated
 	// Loads the necessary textures for the map background
@@ -26,15 +26,6 @@ public:
 	// Performs the render call of all the parts of the scene's background
 	update_status PostUpdate() override;
 
-	// Disables the player and the enemies
-	bool CleanUp();
+	bool CleanUp() override;
 
-public:
-
-	// The scene sprite sheet loaded into an SDL_Texture
-	SDL_Texture* bgTexture = nullptr;
-
-	SDL_Texture* fgTexture = nullptr;
-
-	Animation greyBlock;
 };
