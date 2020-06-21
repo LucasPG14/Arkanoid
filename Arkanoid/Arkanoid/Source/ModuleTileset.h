@@ -40,7 +40,7 @@ public:
 	//getter
 	Tile getTileLevel(int y, int x);
 
-	Tile levelToTile[30][28] = {};
+	Tile levelToTile[32][28] = {};
 
 	int(*level)[28] = nullptr;
 };

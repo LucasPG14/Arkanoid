@@ -31,6 +31,7 @@ bool SceneLevel1::Start()
 	fgTexture = App->textures->Load("Assets/Blocks/Blocks.png");
 
 	App->tileset->Enable();
+	App->player->Enable();
 
 	return ret;
 }
@@ -48,19 +49,22 @@ update_status SceneLevel1::PostUpdate()
 	// Draw everything --------------------------------------
 	App->render->Blit(bgTexture, 0, 16, NULL);
 	
-	App->render->Blit(fgTexture, 8, 56, &(greyBlock.GetCurrentFrame()), 1.0f);
-	App->render->Blit(fgTexture, 24, 56, &(greyBlock.GetCurrentFrame()), 1.0f);
-	App->render->Blit(fgTexture, 40, 56, &(greyBlock.GetCurrentFrame()), 1.0f);
-	App->render->Blit(fgTexture, 56, 56, &(greyBlock.GetCurrentFrame()), 1.0f);
-	App->render->Blit(fgTexture, 72, 56, &(greyBlock.GetCurrentFrame()), 1.0f);
-	App->render->Blit(fgTexture, 88, 56, &(greyBlock.GetCurrentFrame()), 1.0f);
-	App->render->Blit(fgTexture, 104, 56, &(greyBlock.GetCurrentFrame()), 1.0f);
-	App->render->Blit(fgTexture, 120, 56, &(greyBlock.GetCurrentFrame()), 1.0f);
-	App->render->Blit(fgTexture, 136, 56, &(greyBlock.GetCurrentFrame()), 1.0f);
-	App->render->Blit(fgTexture, 152, 56, &(greyBlock.GetCurrentFrame()), 1.0f);
-	App->render->Blit(fgTexture, 168, 56, &(greyBlock.GetCurrentFrame()), 1.0f);
-	App->render->Blit(fgTexture, 184, 56, &(greyBlock.GetCurrentFrame()), 1.0f);
-	App->render->Blit(fgTexture, 200, 56, &(greyBlock.GetCurrentFrame()), 1.0f);
+	for (int i = 0; i < 13; i++) {
+		App->render->Blit(fgTexture, 8 + (16 * i), 56, &(greyBlock.GetCurrentFrame()), 1.0f);
+	}
+	//App->render->Blit(fgTexture, 8, 56, &(greyBlock.GetCurrentFrame()), 1.0f);
+	//App->render->Blit(fgTexture, 24, 56, &(greyBlock.GetCurrentFrame()), 1.0f);
+	//App->render->Blit(fgTexture, 40, 56, &(greyBlock.GetCurrentFrame()), 1.0f);
+	//App->render->Blit(fgTexture, 56, 56, &(greyBlock.GetCurrentFrame()), 1.0f);
+	//App->render->Blit(fgTexture, 72, 56, &(greyBlock.GetCurrentFrame()), 1.0f);
+	//App->render->Blit(fgTexture, 88, 56, &(greyBlock.GetCurrentFrame()), 1.0f);
+	//App->render->Blit(fgTexture, 104, 56, &(greyBlock.GetCurrentFrame()), 1.0f);
+	//App->render->Blit(fgTexture, 120, 56, &(greyBlock.GetCurrentFrame()), 1.0f);
+	//App->render->Blit(fgTexture, 136, 56, &(greyBlock.GetCurrentFrame()), 1.0f);
+	//App->render->Blit(fgTexture, 152, 56, &(greyBlock.GetCurrentFrame()), 1.0f);
+	//App->render->Blit(fgTexture, 168, 56, &(greyBlock.GetCurrentFrame()), 1.0f);
+	//App->render->Blit(fgTexture, 184, 56, &(greyBlock.GetCurrentFrame()), 1.0f);
+	//App->render->Blit(fgTexture, 200, 56, &(greyBlock.GetCurrentFrame()), 1.0f);
 
 	return update_status::UPDATE_CONTINUE;
 }

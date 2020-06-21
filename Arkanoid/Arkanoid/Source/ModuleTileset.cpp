@@ -33,7 +33,7 @@ bool ModuleTileset::Start()
 	else { return false; }
 
 
-	for (int i = 0; i < 30; ++i)
+	for (int i = 0; i < 32; ++i)
 	{
 		for (int j = 0; j < 28; ++j)
 		{
