@@ -12,12 +12,13 @@ Application::Application()
 	modules[5] = scene1 = new SceneLevel1(false);
 
 	modules[6] = player = new ModulePlayer(false);
-	modules[7] = tileset = new ModuleTileset(false);
+	modules[7] = ball = new ModuleBall(false);
+	modules[8] = tileset = new ModuleTileset(false);
 
-	modules[8] = collisions = new ModuleCollisions(true);
-	modules[9] = fade = new ModuleFadeToBlack(true);
-	modules[10] = fonts = new ModuleFonts(true);
-	modules[11] = render = new ModuleRender(true);
+	modules[9] = collisions = new ModuleCollisions(true);
+	modules[10] = fade = new ModuleFadeToBlack(true);
+	modules[11] = fonts = new ModuleFonts(true);
+	modules[12] = render = new ModuleRender(true);
 }
 
 Application::~Application()

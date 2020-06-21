@@ -35,13 +35,10 @@ public:
 	// Position of the player in the map
 	iPoint position;
 
-	fPoint ballPosition;
-
-	float speedX = 2.0;
-	float speedY = 2.0;
+	
 
 	// The speed in which we move the player (pixels per frame)
-	float speed = 1.5f;
+	float speed = 2.0f;
 
 	// The player spritesheet loaded into an SDL_Texture
 	SDL_Texture* texture = nullptr;
@@ -52,7 +49,6 @@ public:
 
 	// A set of animations
 	Animation idleAnim;
-	Animation ballAnim;
 
 	// The player's collider
 	Collider* collider = nullptr;
@@ -63,8 +59,6 @@ public:
 	// Sound effects indices
 	uint laserFx = 0;
 	uint explosionFx = 0;
-
-	bool spacePressed = false;
 
 	// Font score index
 	uint score = 000;

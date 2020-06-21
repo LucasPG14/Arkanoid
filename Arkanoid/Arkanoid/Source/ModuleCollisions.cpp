@@ -25,12 +25,18 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module(startEnabled)
 	matrix[Collider::Type::PLAYER][Collider::Type::PLAYER] = false;
 	matrix[Collider::Type::PLAYER][Collider::Type::ENEMY] = true;
 	matrix[Collider::Type::PLAYER][Collider::Type::PLAYER_SHOT] = false;
+	matrix[Collider::Type::PLAYER][Collider::Type::BALL] = true;
 
 
 	matrix[Collider::Type::PLAYER_SHOT][Collider::Type::WALL] = true;
 	matrix[Collider::Type::PLAYER_SHOT][Collider::Type::PLAYER] = false;
 	matrix[Collider::Type::PLAYER_SHOT][Collider::Type::ENEMY] = true;
 	matrix[Collider::Type::PLAYER_SHOT][Collider::Type::PLAYER_SHOT] = false;
+
+	matrix[Collider::Type::BALL][Collider::Type::WALL] = true;
+	matrix[Collider::Type::BALL][Collider::Type::PLAYER] = true;
+	matrix[Collider::Type::BALL][Collider::Type::ENEMY] = true;
+	matrix[Collider::Type::BALL][Collider::Type::PLAYER_SHOT] = false;
 
 
 }
@@ -75,11 +81,11 @@ update_status ModuleCollisions::PreUpdate()
 
 			if (c1->Intersects(c2->rect))
 			{
-				if (matrix[c1->type][c2->type] && c1->listener)
-					c1->listener->OnCollision(c1, c2);
+				if (matrix[c1->type][c2->type] && c1->listeners)
+					c1->listeners->OnCollision(c1, c2);
 
-				if (matrix[c2->type][c1->type] && c2->listener)
-					c2->listener->OnCollision(c2, c1);
+				if (matrix[c2->type][c1->type] && c2->listeners)
+					c2->listeners->OnCollision(c2, c1);
 			}
 		}
 	}
@@ -127,6 +133,9 @@ void ModuleCollisions::DebugDraw()
 			break;
 		case Collider::Type::PLAYER_SHOT: // yellow
 			App->render->DrawQuad(colliders[i]->rect, 255, 255, 0, alpha);
+			break;
+		case Collider::Type::BALL: // magenta
+			App->render->DrawQuad(colliders[i]->rect, 255, 0, 255, alpha);
 			break;
 		}
 	}

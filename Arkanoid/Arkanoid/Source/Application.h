@@ -14,8 +14,9 @@
 #include "ModuleTileset.h"
 #include "SceneIntro.h"
 #include "Scene1.h"
+#include "ModuleBall.h"
 
-#define NUM_MODULES 12
+#define NUM_MODULES 13
 
 class Module;
 class ModuleWindow;
@@ -30,6 +31,7 @@ class ModulePlayer;
 class ModuleTileset;
 class ModuleFadeToBlack;
 class SceneIntro;
+class ModuleBall;
 
 class Application {
 public:
@@ -58,6 +60,7 @@ public:
 	ModuleFadeToBlack* fade = nullptr;
 	ModuleFonts* fonts = nullptr;
 	SceneIntro* intro = nullptr;
+	ModuleBall* ball = nullptr;
 
 	SceneLevel1* scene1 = nullptr;
 

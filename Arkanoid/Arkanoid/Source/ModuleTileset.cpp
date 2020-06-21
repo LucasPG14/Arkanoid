@@ -77,9 +77,71 @@ bool ModuleTileset::Start()
 	return true;
 }
 
-void ModuleTileset::changeTile(iPoint tile)
+void ModuleTileset::changeTile(iPoint tile, bool touchingHigh)
 {
-	
+	if (tile.x % 2 == 0)
+	{
+		if (touchingHigh)
+		{
+			if (getTileLevel(tile.y + 1.5f, tile.x).id == TileType::HITBLOCK2)
+			{
+				levelToTile[tile.y + 1][tile.x].id = TileType::HITBLOCK1;
+				levelToTile[tile.y + 1][tile.x - 1].id = TileType::HITBLOCK1;
+			}
+
+			else if (getTileLevel(tile.y, tile.x).id == TileType::HITBLOCK1)
+			{
+				levelToTile[tile.y + 1][tile.x].id = TileType::EMPTY;
+				levelToTile[tile.y + 1][tile.x - 1].id = TileType::EMPTY;
+			}
+		}
+		else 
+		{
+			if (getTileLevel(tile.y, tile.x).id == TileType::HITBLOCK2)
+			{
+				levelToTile[tile.y][tile.x].id = TileType::HITBLOCK1;
+				levelToTile[tile.y][tile.x - 1].id = TileType::HITBLOCK1;
+			}
+
+			else if (getTileLevel(tile.y, tile.x).id == TileType::HITBLOCK1)
+			{
+				levelToTile[tile.y][tile.x].id = TileType::EMPTY;
+				levelToTile[tile.y][tile.x - 1].id = TileType::EMPTY;
+			}
+		}
+	}
+
+	else if (tile.x % 2 != 0)
+	{
+		if (touchingHigh)
+		{
+			if (getTileLevel(tile.y + 1.5f, tile.x).id == TileType::HITBLOCK2 && getTileLevel(tile.y + 1.5f, tile.x - 1).id != TileType::WALL)
+			{
+				levelToTile[tile.y + 1][tile.x].id = TileType::HITBLOCK1;
+				levelToTile[tile.y + 1][tile.x + 1].id = TileType::HITBLOCK1;
+			}
+
+			else if (getTileLevel(tile.y + 1.5f, tile.x).id == TileType::HITBLOCK1 && getTileLevel(tile.y + 1.5f, tile.x - 1).id != TileType::WALL)
+			{
+				levelToTile[tile.y + 1][tile.x].id = TileType::EMPTY;
+				levelToTile[tile.y + 1][tile.x + 1].id = TileType::EMPTY;
+			}
+		}
+		else
+		{
+			if (getTileLevel(tile.y, tile.x).id == TileType::HITBLOCK2 && getTileLevel(tile.y, tile.x - 1).id != TileType::WALL)
+			{
+				levelToTile[tile.y][tile.x].id = TileType::HITBLOCK1;
+				levelToTile[tile.y][tile.x + 1].id = TileType::HITBLOCK1;
+			}
+
+			else if (getTileLevel(tile.y, tile.x).id == TileType::HITBLOCK1 && getTileLevel(tile.y, tile.x - 1).id != TileType::WALL)
+			{
+				levelToTile[tile.y][tile.x].id = TileType::EMPTY;
+				levelToTile[tile.y][tile.x + 1].id = TileType::EMPTY;
+			}
+		}
+	}
 }
 
 bool ModuleTileset::CleanUp()

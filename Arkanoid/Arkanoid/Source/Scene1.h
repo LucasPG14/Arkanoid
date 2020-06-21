@@ -37,4 +37,9 @@ public:
 	SDL_Texture* fgTexture = nullptr;
 
 	Animation greyBlock;
+	Animation redBlock;
+	Animation yellowBlock;
+	Animation blueBlock;
+	Animation pinkBlock;
+	Animation greenBlock;
 };

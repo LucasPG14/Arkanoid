@@ -31,7 +31,7 @@ public:
 
 	bool Start() override;
 
-	void changeTile(iPoint tile);
+	void changeTile(iPoint tile, bool touchingHigh);
 
 	//update_status PostUpdate() override;
 

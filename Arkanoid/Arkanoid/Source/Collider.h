@@ -15,6 +15,7 @@ struct Collider
 		PLAYER,
 		ENEMY,
 		PLAYER_SHOT,
+		BALL,
 		MAX
 	};
 
@@ -30,5 +31,5 @@ struct Collider
 	SDL_Rect rect;
 	bool pendingToDelete = false;
 	Type type;
-	Module* listener = nullptr;
+	Module* listeners = nullptr;
 };
